@@ -1,0 +1,14 @@
+.container {
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  background-color: coral;
+  height: 100px;
+  padding-top: 40px;
+ font-style: italic;
+  font-size:xx-large;
+  font-weight: bold;
+  font-style: unset;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}

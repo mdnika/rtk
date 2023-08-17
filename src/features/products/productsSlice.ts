@@ -22,9 +22,8 @@ export const deleteProduct = createAsyncThunk(
 	(id: number) => api.deleteProduct(id) // payload - в данном случае Product
 );
 
-export const createProduct = createAsyncThunk(
-	'products/createProduct',
-	(product: ProductDto) => api.createProduct(product)
+export const createProduct = createAsyncThunk('products/createProduct', (product: ProductDto) =>
+	api.createProduct(product)
 );
 
 export const productsSlice = createSlice({
@@ -44,9 +43,7 @@ export const productsSlice = createSlice({
 				state.products = action.payload;
 			})
 			.addCase(deleteProduct.fulfilled, (state, action) => {
-				state.products = state.products.filter(
-					(product) => product.id !== action.payload.id
-				);
+				state.products = state.products.filter((product) => product.id !== action.payload.id);
 			})
 			.addCase(createProduct.fulfilled, (state, action) => {
 				state.products.push(action.payload);
@@ -55,5 +52,4 @@ export const productsSlice = createSlice({
 });
 
 export default productsSlice.reducer;
-export const { changeToggleStatus, chooseFavoriteProduct } =
-	productsSlice.actions; // экспорт функций reducers
+export const { changeToggleStatus, chooseFavoriteProduct } = productsSlice.actions; // экспорт функций reducers

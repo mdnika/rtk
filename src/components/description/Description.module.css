@@ -1,0 +1,24 @@
+.descriptionCard {
+  margin-top: 0;
+ padding-bottom: 30px;
+ height: 200px;
+  padding-top: 0;
+  background-color: lavenderblush;
+}
+
+.titleDescription {
+  margin-top: 30px;
+  padding-top: 30px;
+  color:dimgray;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.textDescription {
+  margin: 30px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+justify-content: center;
+}

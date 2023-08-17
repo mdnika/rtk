@@ -1,10 +1,6 @@
 import { useEffect } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import {
-	selectFavoriteProduct,
-	selectProducts,
-	selectToggle,
-} from './selectors';
+import { selectFavoriteProduct, selectProducts, selectToggle } from './selectors';
 import {
 	changeToggleStatus,
 	chooseFavoriteProduct,
@@ -32,11 +28,7 @@ export default function ProductsList(): JSX.Element {
 			<p>
 				{favoriteProduct?.title} {favoriteProduct?.description}
 			</p>
-			<div
-				style={
-					toggle ? { backgroundColor: 'green' } : { backgroundColor: 'red' }
-				}
-			>
+			<div style={toggle ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}>
 				TOGGLE STATUS
 			</div>
 			<button type="button" onClick={() => dispatch(changeToggleStatus())}>
@@ -46,9 +38,7 @@ export default function ProductsList(): JSX.Element {
 			{products.map((product) => (
 				<li key={String(product.id)}>
 					{product.title} {product.price}
-					<FavoriteIcon
-						onClick={() => dispatch(chooseFavoriteProduct(product))}
-					/>
+					<FavoriteIcon onClick={() => dispatch(chooseFavoriteProduct(product))} />
 					<button type="button" onClick={() => handleDelete(product.id)}>
 						Удалить
 					</button>
